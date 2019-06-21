@@ -1,1 +1,2 @@
-# yuedu-electron
+cnpm i;
+npm run dev;
