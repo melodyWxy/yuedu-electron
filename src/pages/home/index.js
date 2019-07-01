@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 class Home extends Component {
     render() {
       return (
         <div className="App">
           <div className="App-header">
-            <Button variant="contained" color="primary">
-              开始
-            </Button>
+            <Link to='/error-page'>
+              <Button
+                variant='contained'
+                color='primary'
+                onClick={this.handleHome}>
+                to error-page
+              </Button>
+            </Link>
           </div>
         </div>
       );
