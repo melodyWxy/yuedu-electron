@@ -1,2 +1,3 @@
 cnpm i;
-npm run dev;
+npm start;
+npm run electron;
