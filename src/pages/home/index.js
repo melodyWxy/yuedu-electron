@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Button from '@material-ui/core/Button'
 
-import mapDispatchToProps from './methods'
+import mapDispatchToProps from './actions'
 import get from '../../utils/get'
 
 class Home extends Component {
