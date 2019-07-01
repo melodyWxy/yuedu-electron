@@ -1,5 +1,6 @@
 import { ADD, LESS, CATEGORIES } from "./action_type"
 import request from '../../utils/request'
+import change from '../../utils/change'
 
 const handleAdd = dispatch => {
     dispatch({
@@ -23,8 +24,4 @@ const getData = dispatch => {
     })
 }
 
-export default (dispatch) => ({
-    handleAdd: () => handleAdd(dispatch),
-    handleLess: () => handleLess(dispatch),
-    getData: () => getData(dispatch),
-})
+export default change(handleAdd, handleLess, getData)
