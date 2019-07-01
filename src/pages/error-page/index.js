@@ -6,19 +6,18 @@ class Home extends Component {
   handleHome = () => {
     // hashHistory.push('./home')
     // console.log('跳转error-page')
+    this.props.history.push('/home');
   }
   render () {
     return (
       <div className='App'>
         <div className='App-header'>
-          <Link to='/home'>
             <Button
               variant='contained'
               color='primary'
               onClick={this.handleHome}>
               to Home
             </Button>
-          </Link>
         </div>
       </div>
     )
