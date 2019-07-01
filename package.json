@@ -61,6 +61,10 @@
     "react-dom": "^16.8.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
@@ -72,11 +76,11 @@
     "workbox-webpack-plugin": "3.6.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node scripts/start.js && cross-env NODE_ENV=production webpack",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "electron": "electron .",
-    "dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000",
+    "dev": "npm start && npm run electron",
     "package": "yarn build && electron-builder -c.extraMetadata.main=main.js --win --x64"
   },
   "eslintConfig": {
@@ -90,6 +94,7 @@
   ],
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
     "electron": "^4.0.1",
     "electron-builder": "^20.38.4",
     "wait-on": "^3.2.0"
