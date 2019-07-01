@@ -76,7 +76,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "electron": "electron .",
-    "dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000",
     "package": "yarn build && electron-builder -c.extraMetadata.main=main.js --win --x64"
   },
   "eslintConfig": {

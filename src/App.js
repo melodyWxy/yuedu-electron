@@ -9,7 +9,6 @@ class App extends Component {
   render () {
     return (
       <Router history={history}>
-        <Route path='/' component={Home} />
         <Route path='/home' component={Home} />
         <Route path='/error-page' component={ErrorPage} />
       </Router>
