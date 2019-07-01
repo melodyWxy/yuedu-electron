@@ -12,8 +12,7 @@ const originalReducers = {
 const reducer = combineReducers(originalReducers);
 const middlewares = [thunk];
 
-if (process.env.NODE_ENV === 'production') {
-  console.log("生产环境");
+if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger);
 }
 

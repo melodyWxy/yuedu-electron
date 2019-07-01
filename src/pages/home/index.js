@@ -37,9 +37,11 @@ class Home extends Component {
           <div style={{marginTop: 10}}>
             书籍分类:
             <ul>
-              {female.map(item=>{
-                return <li>分类：{ item.name } 总量: { item.bookCount }</li>
-              })}
+              {
+                female.map((item, index)=>{
+                  return <li key={index}>分类：{ item.name } 总量: { item.bookCount }</li>
+                })
+              }
             </ul>
           </div>
         </div>
