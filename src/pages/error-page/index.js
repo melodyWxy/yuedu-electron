@@ -8,12 +8,7 @@ class Home extends Component {
       <div className='App'>
         <div className='App-header'>
           <Link to='/home'>
-            <Button
-              variant='contained'
-              color='primary'
-              onClick={this.handleHome}>
-              to Home
-            </Button>
+           ls
           </Link>
         </div>
       </div>
