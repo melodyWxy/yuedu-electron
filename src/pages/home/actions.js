@@ -1,20 +1,19 @@
 import { ADD, LESS, CATEGORIES } from "./action_type"
 import request from '../../utils/request'
-import change from '../../utils/change'
 
-const handleAdd = dispatch => {
+export const handleAdd = dispatch => {
     dispatch({
         type: ADD
     })
 }
 
-const handleLess = dispatch => {
+export const handleLess = dispatch => {
     dispatch({
         type: LESS
     })
 }
 
-const getData = dispatch => {
+export const getData = dispatch => {
     let categories = request('https://novel.juhe.im/categories');
     categories.then(res=>{
         dispatch({
@@ -23,5 +22,3 @@ const getData = dispatch => {
         })
     })
 }
-
-export default change(handleAdd, handleLess, getData)

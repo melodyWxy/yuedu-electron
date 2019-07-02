@@ -3,18 +3,27 @@ import { connect } from 'react-redux'
 
 import Button from '@material-ui/core/Button'
 
-import mapDispatchToProps from './actions'
+import { getData, handleAdd, handleLess } from './actions'
 import get from '../../utils/get'
 
 class Home extends Component {
+
+  componentDidMount() {
+    this.props.dispatch(getData)
+  }
 
   handleClick = () => {
     this.props.history.push('/error-page');
   }
 
-  componentDidMount() {
-    this.props.getData()
+  handleAdd = () => {
+    this.props.dispatch(handleAdd)
   }
+
+  handleLess = () => {
+    this.props.dispatch(handleLess)
+  }
+
 
   render() {
     const { count = 0, data = {} } = this.props.state;
@@ -26,11 +35,11 @@ class Home extends Component {
             to error-page
           </Button>
           <div style={{marginTop: 10}}>
-            <Button variant='contained' color='primary' onClick={this.props.handleAdd}>
+            <Button variant='contained' color='primary' onClick={this.handleAdd}>
               +
             </Button>
             <span style={{margin: '0 5px'}}>{count}</span>
-            <Button variant='contained' color='primary' onClick={this.props.handleLess}>
+            <Button variant='contained' color='primary' onClick={this.handleLess}>
               -
             </Button>
           </div>
@@ -52,4 +61,4 @@ class Home extends Component {
 
 const mapStateToProps = (state) => ({ state: state.HomeReducer })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps)(Home)
